@@ -39,6 +39,27 @@
             white-space: nowrap;
             animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
         }
+        .custom-link {
+            position: relative;
+            color: #3b82f6; /* Tailwind text-blue-500 */
+            text-decoration: none;
+        }
+        .custom-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #1e40af; /* Tailwind blue-800 */
+            transition: width 0.3s ease;
+        }
+        .custom-link:hover {
+            color: #1e40af; /* Tailwind blue-800 */
+        }
+        .custom-link:hover::after {
+            width: 100%;
+        }
         @keyframes typing {
             from { width: 0 }
             to { width: 100% }
@@ -360,7 +381,8 @@
                     </div>
                     <div class="border-l-4 border-blue-500 pl-4">
                         <div class="font-bold">PhD student</div>
-                        <div class="text-gray-600"><a href="https://www.biorobotics.snu.ac.kr/">Biorobotics Lab.</a>, Seoul National Univ., 2013-2024</div>
+                        <div class="text-gray-600"><a href="https://www.biorobotics.snu.ac.kr/" target="_blank" rel="noopener noreferrer" class="custom-link">Biorobotics Lab.</a>,
+                             Seoul National Univ., 2013-2024</div>
                         <div class="text-sm text-gray-500">Wearable and Prosthetics Team </div>
                         
                     </div>
