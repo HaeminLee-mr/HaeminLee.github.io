@@ -60,6 +60,14 @@
         .custom-link:hover::after {
             width: 100%;
         }
+        .sns-link {
+            color: #3b82f6; /* Tailwind text-blue-500 */
+            transition: color 0.3s ease, background-color 0.3s ease;
+        }
+        .sns-link:hover {
+            color: #1e40af; /* Tailwind blue-800 */
+            background-color: #eff6ff; /* Tailwind blue-50 */
+        }
         @keyframes typing {
             from { width: 0 }
             to { width: 100% }
@@ -206,6 +214,7 @@
                             <div>
                                 <h4 class="font-medium text-gray-800">Email</h4>
                                 <p class="text-gray-600">dlgoals16 at gmail.com</p>
+                                <p class="text-gray-600">haemin.lee@mand.ro</p>                                
                             </div>
                         </div>
                         <div class="flex items-center">
@@ -215,6 +224,15 @@
                             <div>
                                 <h4 class="font-medium text-gray-800">Education</h4>
                                 <p class="text-gray-600">Ph.D in Mechanical Engineering</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="mr-3 text-blue-500">
+                                <i class="fa-brands fa-blogger-b"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Blogger</h4>
+                                <p class="text-gray-600"><a href="https://morobolab.blogspot.com/" target="_blank" rel="noopener noreferrer" class="custom-link" aria-label="Visit MoRoBo Lab.">MoRoBo Lab.</a></p>
                             </div>
                         </div>
                     </div>
@@ -233,13 +251,14 @@
                     <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Heat Exchanger" class="w-full h-full object-cover">
                 </div>
                 <div class="p-6">
-                    <h3 class="text-xl font-bold mb-2 text-blue-800">Advanced Microchannel Heat Exchangers</h3>
+                    <h3 class="text-xl font-bold mb-2 text-blue-800">Single-Step 3D Printing of Bio-Inspired Printable Joints Applied to a Prosthetic Hand</h3>
                     <div class="flex items-center text-sm text-gray-500 mb-3">
-                        <span class="mr-4"><i class="far fa-calendar mr-1"></i> 2021</span>
-                        <span><i class="fas fa-book-open mr-1"></i> International Journal of Heat and Mass Transfer</span>
+                        <span class="mr-4"><i class="far fa-calendar mr-1"></i> 2023</span>
+                        <span><i class="fas fa-book-open mr-1"></i> 3D Printing and Additive Manufacturing</span>
                     </div>
                     <p class="text-gray-700 mb-4">
-                        This research presents a novel design for microchannel heat exchangers that improves thermal performance by 35% while reducing pressure drop by 20% compared to conventional designs.
+                        This research presents a novel design approach to address structural challenges in 3D-printed parts arising from the precision limitations of additive manufacturing processes.
+                        By mechanically implementing human finger-like joint shapes and utilizing the induced cam effect, the proposed method enables the creation of complex linkage mechanisms through a single-step 3D printing process—eliminating the need for post-print assembly.
                     </p>
                     <button onclick="openModal('modal1')" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
                         Read More <i class="fas fa-arrow-right ml-2"></i>
@@ -250,7 +269,7 @@
             <!-- Research 2 -->
             <div class="research-card bg-white rounded-lg shadow overflow-hidden">
                 <div class="h-48 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1508514177221-188e1dfbcd19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Solar Thermal" class="w-full h-full object-cover">
+                    <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Heat Exchanger" class="w-full h-full object-cover">
                 </div>
                 <div class="p-6">
                     <h3 class="text-xl font-bold mb-2 text-blue-800">Hybrid Solar-Thermal Energy Storage System</h3>
@@ -383,8 +402,8 @@
                     </div>
                     <div class="border-l-4 border-blue-500 pl-4">
                         <div class="font-bold">PhD student</div>
-                        <div class="text-gray-600"><a href="https://www.biorobotics.snu.ac.kr/" target="_blank" rel="noopener noreferrer" class="custom-link" aria-label="Visit Biorobotics Lab">Biorobotics Lab.</a>,
-                             Seoul National Univ., 2013-2024</div>
+                        <div class="text-gray-600"><a href="https://www.biorobotics.snu.ac.kr/" target="_blank" rel="noopener noreferrer" class="custom-link" aria-label="Visit Biorobotics Lab">Biorobotics Lab.</a>
+                             , Seoul National Univ., 2013-2024</div>
                         <div class="text-sm text-gray-500">Wearable and Prosthetics Team </div>
                         
                     </div>
@@ -423,37 +442,24 @@
                             </div>
                             <div>
                                 <h4 class="font-medium text-gray-800">Email</h4>
-                                <p class="text-gray-600">your.email@example.com</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="mr-4 text-blue-500 mt-1">
-                                <i class="fas fa-phone-alt text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium text-gray-800">Phone</h4>
-                                <p class="text-gray-600">+1 (123) 456-7890</p>
+                                <p class="text-gray-600">dlgoals16 at gmail.com</p>
+                                <p class="text-gray-600">haemin.lee@mand.ro</p>
                             </div>
                         </div>
                     </div>
                     <div class="mt-8">
                         <h4 class="font-medium text-gray-800 mb-4">Follow Me</h4>
                         <div class="flex space-x-4">
-                            <a href="#" class="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-blue-500 hover:bg-blue-50 transition">
+                            
+                            <a href="https://github.com/haeminLee-mr/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-blue-300 mx-2">
                                 <i class="fab fa-github"></i>
                             </a>
-                            <a href="#" class="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-blue-500 hover:bg-blue-50 transition">
+                            <a href="https://www.linkedin.com/in/haemin-lee-971b04308?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Bf0qIUfsnTomjADokGE0PHA%3D%3D/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-blue-300 mx-2">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
-                            <a href="#" class="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-blue-500 hover:bg-blue-50 transition">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="#" class="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-blue-500 hover:bg-blue-50 transition">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="#" class="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-blue-500 hover:bg-blue-50 transition">
-                                <i class="fab fa-medium"></i>
-                            </a>
+                            <a href="https://morobolab.blogspot.com/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-blue-300 mx-2">
+                                <i class="fa-brands fa-blogger-b"></i>
+                            </a>                            
                         </div>
                     </div>
                 </div>
@@ -526,8 +532,8 @@
                     </button>
                 </div>
                 <div class="flex items-center text-sm text-gray-500 mb-6">
-                    <span class="mr-4"><i class="far fa-calendar mr-1"></i> 2021</span>
-                    <span><i class="fas fa-book-open mr-1"></i> International Journal of Heat and Mass Transfer</span>
+                    <span class="mr-4"><i class="far fa-calendar mr-1"></i> 2023</span>
+                    <span><i class="fas fa-book-open mr-1"></i> 3D Printing and Additive Manufacturing </span>
                 </div>
                 <div class="mb-6">
                     <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Heat Exchanger" class="w-full h-64 object-cover rounded-lg">
@@ -535,31 +541,31 @@
                 <div class="prose max-w-none">
                     <h4 class="text-xl font-semibold mb-2 text-blue-700">Abstract</h4>
                     <p class="mb-4">
-                        This paper presents a novel design for microchannel heat exchangers that improves thermal performance by 35% while reducing pressure drop by 20% compared to conventional designs. The enhanced performance is achieved through a combination of optimized channel geometry, surface modifications, and innovative flow distribution techniques.
-                    </p>
+                        Single-step 3D printing, which can manufacture complicated designs without assembly, has the potential to completely change our design perspective,
+                         and how 3D printing products, rather than printing static components, ready-to-use movable mechanisms become a reality. 
+                         Existing 3D printing solutions are challenged by precision limitations, and cannot directly produce tightly mated moving surfaces. 
+                         Therefore, joints must be designed with a sufficient gap between the components, resulting in joints and other mechanisms with imprecise motion. 
+                         In this study, we propose a bio-inspired printable joint and apply it to a Single sTep 3D-printed Prosthetic hand (ST3P hand). 
+                         We simulate the anatomical structure of the human finger joint and implement a cam effect that changed the distance between the contact surfaces 
+                         through the elastic bending of the ligaments as the joint flexed. This bio-inspired design allows the joint to be single-step 3D printed and provides precise motion. 
+                         The bio-inspired printable joint makes it possible for the ST3P hand to be designed as a lightweight (~255 g), low-cost (~$500) 
+                         monolithic structure with nine finger joints and manufactured via single-step 3D printing. The ST3P hand takes ~6 min to assemble, 
+                         which is approximately one-tenth the assembly time of open-source 3D printed prostheses. The hand can perform basic hand tasks of activities of daily 
+                         living by providing a pulling force of 48 N and grasp strength of 20 N. The simple manufacturing of the ST3P hand 
+                         could help us take one step closer to realizing fully customized robotic prosthetic hands at low cost and effort.
+                    </p>                  
                     
-                    <h4 class="text-xl font-semibold mb-2 text-blue-700">Key Innovations</h4>
-                    <ul class="list-disc pl-5 mb-4 space-y-2">
-                        <li>Developed a hierarchical microchannel structure that enhances heat transfer while minimizing pressure drop</li>
-                        <li>Implemented surface microstructures that promote nucleation and improve boiling heat transfer</li>
-                        <li>Designed a novel flow distribution manifold that ensures uniform flow across all channels</li>
-                        <li>Utilized additive manufacturing techniques to create complex internal geometries not possible with traditional manufacturing</li>
-                    </ul>
-                    
-                    <h4 class="text-xl font-semibold mb-2 text-blue-700">Results</h4>
+                    <h4 class="text-xl font-semibold mb-2 text-blue-700">Video</h4>
                     <p class="mb-4">
-                        Experimental testing demonstrated a 35% improvement in overall heat transfer coefficient compared to conventional microchannel designs. Pressure drop was reduced by 20% due to the optimized flow distribution. The heat exchanger maintained stable performance over 1000 thermal cycles with no degradation.
-                    </p>
-                    
-                    <h4 class="text-xl font-semibold mb-2 text-blue-700">Applications</h4>
-                    <p class="mb-4">
-                        This technology has applications in electronics cooling, automotive thermal management, aerospace systems, and HVAC applications where compact, high-performance heat exchangers are required.
+                        <div class="text-gray-600"><a href="https://www.youtube.com/watch?v=T3BSG7BrVZk" 
+                            target="_blank" rel="noopener noreferrer" class="custom-link" aria-label="youtube">Single-sTep 3D-printed Prosthetic hand</a> 
+                        </div>                 
                     </p>
                     
                     <div class="bg-blue-50 p-4 rounded-lg">
                         <h4 class="font-semibold mb-2 text-blue-700">Citation</h4>
                         <p class="text-sm">
-                            Wilson, J., et al. (2021). "Advanced Microchannel Heat Exchangers." <em>International Journal of Heat and Mass Transfer</em>, 164, 120541. https://doi.org/xxxx/xxxxxx
+                            Haemin Lee, et al. (2023). "Single-Step 3D Printing of Bio-Inspired Printable Joints Applied to a Prosthetic Hand." <em>3D Printing and Additive Manufacturing</em>, Vol. 10, No. 5. https://doi.org/10.1089/3dp.2022.0120
                         </p>
                     </div>
                 </div>
