@@ -412,8 +412,39 @@
         </div>
     </section>
     </main>
-
     <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Get in <span class="gradient-text">Touch</span></h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
+            </div>
+            <div class="max-w-2xl mx-auto">
+                <form action="mailto:your.email@example.com" method="GET" enctype="text/plain" class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="mb-6">
+                        <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
+                        <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="John Doe" required aria-label="Enter your name">
+                    </div>
+                    <div class="mb-6">
+                        <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                        <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="john@example.com" required aria-label="Enter your email address">
+                    </div>
+                    <div class="mb-6">
+                        <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+                        <input type="text" id="subject" name="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="How can I help you?" required aria-label="Enter the subject of your message">
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-gray-700 font-medium mb-2">Your Message</label>
+                        <textarea id="message" name="body" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Write your message here..." required aria-label="Enter your message"></textarea>
+                    </div>
+                    <button type="submit" class="w-full px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition shadow-lg">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+        
+    Contact Section
     <section id="contact" class="py-20 bg-gray-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -557,15 +588,19 @@
                     
                     <h4 class="text-xl font-semibold mb-2 text-blue-700">Video</h4>
                     <p class="mb-4">
-                        <div class="text-gray-600"><a href="https://www.youtube.com/watch?v=T3BSG7BrVZk" 
+                        <div class="text-gray-600">
+                            <a href="https://www.youtube.com/watch?v=T3BSG7BrVZk" 
                             target="_blank" rel="noopener noreferrer" class="custom-link" aria-label="youtube">Single-sTep 3D-printed Prosthetic hand</a> 
                         </div>                 
                     </p>
                     
-                    <div class="bg-blue-50 p-4 rounded-lg">
+                    <div class="bg-blue-50 p-4 rounded-lg mt-4">
                         <h4 class="font-semibold mb-2 text-blue-700">Citation</h4>
                         <p class="text-sm">
-                            Haemin Lee, et al. (2023). "Single-Step 3D Printing of Bio-Inspired Printable Joints Applied to a Prosthetic Hand." <em>3D Printing and Additive Manufacturing</em>, Vol. 10, No. 5. https://doi.org/10.1089/3dp.2022.0120
+                            Haemin Lee, et al. (2023). "Single-Step 3D Printing of Bio-Inspired Printable Joints Applied to a Prosthetic Hand." 
+                            <em>3D Printing and Additive Manufacturing</em>, Vol. 10, No. 5. 
+                            <a href="https://doi.org/10.1089/3dp.2022.0120" 
+                            target="_blank" rel="noopener noreferrer" class="custom-link" aria-label="doi">https://doi.org/10.1089/3dp.2022.0120</a>
                         </p>
                     </div>
                 </div>
@@ -593,31 +628,38 @@
                 <div class="prose max-w-none">
                     <h4 class="text-xl font-semibold mb-2 text-blue-700">Abstract</h4>
                     <p class="mb-4">
-                        This research presents a hybrid solar-thermal energy storage system that combines phase change materials with sensible heat storage to achieve 80% thermal efficiency and 24-hour heat supply capability for residential applications. The system addresses the intermittency of solar energy by providing consistent thermal output.
-                    </p>
+                        This paper presents the development of a polymer-based tendon-driven wearable robotic hand, Exo-Glove Poly. 
+                        Unlike the previously developed Exo-Glove, a fabric-based tendon-driven wearable robotic hand, 
+                        Exo-Glove Poly was developed using silicone to allow for sanitization between users in multiple-user environments such as hospitals. 
+                        Exo-Glove Poly was developed to use two motors, one for the thumb and the other for the index/middle finger, and an under-actuation mechanism to grasp various objects.
+                        In order to realize Exo-Glove Poly, design features and fabrication processes were developed to permit adjustment 
+                        to different hand sizes, to protect users from injury, to enable ventilation, and to embed Teflon tubes for the wire paths.
+                        The mechanical properties of Exo-Glove Poly were verified with a healthy subject through a wrap grasp experiment using a mat-type pressure sensor
+                        and an under-actuation performance experiment with a specialized test set-up.
+                        Finally, performance of the Exo-Glove Poly for grasping various shapes of object was verified, including objects needing under-actuation.
+                    </p>                  
                     
-                    <h4 class="text-xl font-semibold mb-2 text-blue-700">System Design</h4>
-                    <ul class="list-disc pl-5 mb-4 space-y-2">
-                        <li>Integrated evacuated tube solar collectors with high-efficiency absorption</li>
-                        <li>Developed a cascaded phase change material (PCM) system with multiple melting points</li>
-                        <li>Incorporated a sensible heat storage tank as a buffer and for low-grade heat storage</li>
-                        <li>Implemented an intelligent control system that optimizes energy flow based on demand and solar input</li>
-                    </ul>
-                    
-                    <h4 class="text-xl font-semibold mb-2 text-blue-700">Performance</h4>
+                    <h4 class="text-xl font-semibold mb-2 text-blue-700">Video</h4>
                     <p class="mb-4">
-                        Field testing demonstrated an overall system efficiency of 80%, with the ability to provide 24-hour heat supply even during periods of limited solar input. The cascaded PCM system improved energy density by 40% compared to single-PCM systems, while the intelligent control reduced auxiliary energy consumption by 30%.
+                        <div class="text-gray-600">
+                            <a href="https://www.youtube.com/watch?v=oNEFXcWRIG8" 
+                            target="_blank" rel="noopener noreferrer" class="custom-link" aria-label="youtube">Exo-Glove Poly (Extended)</a> 
+                        </div>                 
                     </p>
                     
-                    <h4 class="text-xl font-semibold mb-2 text-blue-700">Impact</h4>
-                    <p class="mb-4">
-                        This system has the potential to reduce residential heating energy consumption by 60-70% in moderate climates. The technology is particularly suitable for regions with high solar insolation but limited grid infrastructure, providing a sustainable alternative to fossil fuel-based heating.
-                    </p>
-                    
-                    <div class="bg-blue-50 p-4 rounded-lg">
+                    <div class="bg-blue-50 p-4 rounded-lg mt-4">
                         <h4 class="font-semibold mb-2 text-blue-700">Citation</h4>
                         <p class="text-sm">
-                            Wilson, J., et al. (2022). "Hybrid Solar-Thermal Energy Storage System." <em>Applied Energy</em>, 305, 117822. https://doi.org/xxxx/xxxxxx
+                            Brian Byunghyun Kang; Haemin Lee; Hyunki In; Useok Jeong; Jinwon Chung; Kyu-Jin (2016). "Development of a polymer-based tendon-driven wearable robotic hand." 
+                            <em>IEEE International Conference on Robotics and Automation (ICRA)</em>, 
+                            <a href="https://doi.org/10.1109/ICRA.2016.7487562" 
+                            target="_blank" rel="noopener noreferrer" class="custom-link" aria-label="doi">https://doi.org/10.1109/ICRA.2016.7487562</a>
+                        </p>
+                        <p class="text-sm">
+                             Brian Byunghyun Kang, Hyungmin Choi, Haemin Lee, and Kyu-Jin Cho (2019). "Exo-glove poly II: A polymer-based soft wearable robot for the hand with a tendon-driven actuation system." 
+                             <em>Soft robotics</em>, Vol. 6, No. 2. 
+                             <a href="https://doi.org/10.1089/3dp.2022.0120" 
+                            target="_blank" rel="noopener noreferrer" class="custom-link" aria-label="doi">https://doi.org/10.1089/3dp.2022.0120 </a>
                         </p>
                     </div>
                 </div>
