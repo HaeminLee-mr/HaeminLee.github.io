@@ -3,296 +3,376 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mechanical Engineer Profile</title>
+    <title>My Personal Profile</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        .research-card {
-            transition: all 0.3s ease;
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
-        .research-card:hover {
+        .card-hover:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
-        .modal {
-            transition: opacity 0.3s ease, visibility 0.3s ease;
+        .nav-link {
+            position: relative;
         }
-        .publication-item:nth-child(odd) {
-            background-color: #f9fafb;
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #3b82f6;
+            transition: width 0.3s ease;
         }
-        .publication-item:nth-child(even) {
-            background-color: #ffffff;
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid #3b82f6;
+            white-space: nowrap;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #3b82f6; }
         }
     </style>
 </head>
 <body class="bg-gray-50 font-sans">
-    <!-- Header Section -->
-    <header class="bg-blue-800 text-white py-8">
-        <div class="container mx-auto px-4 md:px-6">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/4 mb-6 md:mb-0 flex justify-center">
-                    <div class="w-40 h-40 rounded-full bg-white overflow-hidden shadow-lg">
-                        <img src="images/gear1.png" alt="Profile" class="w-full h-full object-cover">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold gradient-text">MyProfile</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-blue-500 transition">Home</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-blue-500 transition">About</a>
+                    <a href="#skills" class="nav-link text-gray-700 hover:text-blue-500 transition">Skills</a>
+                    <a href="#projects" class="nav-link text-gray-700 hover:text-blue-500 transition">Projects</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-blue-500 transition">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button class="mobile-menu-button">
+                        <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="mobile-menu hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-500 hover:bg-gray-50">Home</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-500 hover:bg-gray-50">About</a>
+                <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-500 hover:bg-gray-50">Skills</a>
+                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-500 hover:bg-gray-50">Projects</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-500 hover:bg-gray-50">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="py-20 bg-gradient-to-r from-blue-50 to-purple-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+                        Hi, I'm <span class="gradient-text">Your Name</span>
+                    </h1>
+                    <h2 class="text-2xl md:text-3xl font-semibold text-gray-600 mb-6 typewriter">
+                        A Passionate Developer
+                    </h2>
+                    <p class="text-gray-600 mb-8 text-lg">
+                        I build amazing digital experiences that make people's lives easier.
+                        Welcome to my personal space on the internet!
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#contact" class="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition shadow-lg">
+                            Contact Me
+                        </a>
+                        <a href="#projects" class="px-6 py-3 border border-blue-500 text-blue-500 rounded-lg hover:bg-blue-50 transition">
+                            View Projects
+                        </a>
                     </div>
                 </div>
-                <div class="md:w-3/4 text-center md:text-left md:pl-8">
-                    <h1 class="text-3xl md:text-4xl font-bold mb-2">Haemin Lee</h1>
-                    <h2 class="text-xl md:text-2xl font-semibold mb-4">Mechanical Engineer</h2>
-                    <p class="text-blue-200 max-w-2xl mx-auto md:mx-0">
-                        Specializing in rotobics, robotic hands and prosthetics design, 3D printers and 3D printed mechanisms with 10+ years of research and industry experience.
-                    </p>
-                    <div class="mt-4 flex justify-center md:justify-start space-x-4">
-                        <a href="#" class="text-white hover:text-blue-200">
-                            <i class="fab fa-linkedin text-xl"></i>
-                        </a>
-                        <a href="#" class="text-white hover:text-blue-200">
-                            <i class="fab fa-google text-xl"></i>
-                        </a>
-                        <a href="#" class="text-white hover:text-blue-200">
-                            <i class="fab fa-researchgate text-xl"></i>
-                        </a>
-                        <a href="#" class="text-white hover:text-blue-200">
-                            <i class="fas fa-envelope text-xl"></i>
-                        </a>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 flex items-center justify-center">
+                            <div class="w-60 h-60 md:w-72 md:h-72 rounded-full bg-white overflow-hidden border-4 border-white shadow-xl">
+                                <!-- Replace with your image -->
+                                <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" 
+                                     alt="Profile" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-5 -right-5 bg-white p-3 rounded-full shadow-lg">
+                            <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white">
+                                <i class="fas fa-code text-xl"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </header>
+    </section>
 
-    <!-- Main Content -->
-    <main class="container mx-auto px-4 md:px-6 py-8">
-        <!-- About Section -->
-        <section class="mb-12">
-            <h2 class="text-2xl font-bold mb-6 text-blue-800 border-b pb-2">About</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="md:col-span-2">
-                    <p class="text-gray-700 mb-4">
-                        Dr. James Wilson is a mechanical engineer with expertise in thermal-fluid sciences, energy systems, and mechanical design. 
-                        His research focuses on developing innovative solutions for energy efficiency, renewable energy integration, and advanced thermal management systems.
-                    </p>
-                    <p class="text-gray-700 mb-4">
-                        Currently serving as a Senior Research Engineer at Advanced Thermal Solutions Inc., Dr. Wilson leads projects on next-generation heat exchangers 
-                        and sustainable cooling technologies. He has authored over 30 peer-reviewed publications and holds 5 patents in thermal management systems.
-                    </p>
-                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6">
-                        <div class="bg-white p-4 rounded-lg shadow text-center">
-                            <div class="text-blue-600 text-3xl font-bold mb-2">10+</div>
-                            <div class="text-gray-600">Years Experience</div>
-                        </div>
-                        <div class="bg-white p-4 rounded-lg shadow text-center">
-                            <div class="text-blue-600 text-3xl font-bold mb-2">30+</div>
-                            <div class="text-gray-600">Publications</div>
-                        </div>
-                        <div class="bg-white p-4 rounded-lg shadow text-center">
-                            <div class="text-blue-600 text-3xl font-bold mb-2">5</div>
-                            <div class="text-gray-600">Patents</div>
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">About <span class="gradient-text">Me</span></h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
+            </div>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-10 md:mb-0 flex justify-center">
+                    <div class="relative">
+                        <div class="w-56 h-56 md:w-64 md:h-64 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 flex items-center justify-center">
+                            <div class="w-52 h-52 md:w-60 md:h-60 rounded-full bg-white overflow-hidden border-4 border-white shadow-xl">
+                                <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" 
+                                     alt="Profile" class="w-full h-full object-cover">
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div>
-                    <div class="bg-white p-6 rounded-lg shadow">
-                        <h3 class="font-bold text-lg mb-4 text-blue-800">Research Interests</h3>
-                        <ul class="space-y-2">
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
-                                <span>Thermal management systems</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
-                                <span>Computational fluid dynamics</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
-                                <span>Heat exchanger design</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
-                                <span>Renewable energy systems</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
-                                <span>Energy efficiency</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
-                                <span>Two-phase flow</span>
-                            </li>
-                        </ul>
+                <div class="md:w-2/3 md:pl-12">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Who am I?</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        I'm a passionate developer with expertise in building web applications and solving complex problems with code. 
+                        With over 5 years of experience in the tech industry, I've worked on various projects ranging from small business 
+                        websites to large-scale enterprise applications.
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        My journey in technology started when I was just a teenager, fascinated by how computers work. Since then, 
+                        I've dedicated myself to continuous learning and staying updated with the latest technologies and best practices.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center">
+                            <div class="mr-3 text-blue-500">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Full Name</h4>
+                                <p class="text-gray-600">Your Name</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="mr-3 text-blue-500">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Location</h4>
+                                <p class="text-gray-600">City, Country</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="mr-3 text-blue-500">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Email</h4>
+                                <p class="text-gray-600">your.email@example.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="mr-3 text-blue-500">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Education</h4>
+                                <p class="text-gray-600">Computer Science Degree</p>
+                            </div>
+                        </div>
                     </div>
+                    <a href="#" class="inline-block px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition shadow-lg">
+                        Download CV
+                    </a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Featured Research Section -->
-        <section class="mb-12">
-            <h2 class="text-2xl font-bold mb-6 text-blue-800 border-b pb-2">Featured Research</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Research 1 -->
-                <div class="research-card bg-white rounded-lg shadow overflow-hidden">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Heat Exchanger" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-blue-800">Advanced Microchannel Heat Exchangers</h3>
-                        <div class="flex items-center text-sm text-gray-500 mb-3">
-                            <span class="mr-4"><i class="far fa-calendar mr-1"></i> 2021</span>
-                            <span><i class="fas fa-book-open mr-1"></i> International Journal of Heat and Mass Transfer</span>
-                        </div>
-                        <p class="text-gray-700 mb-4">
-                            This research presents a novel design for microchannel heat exchangers that improves thermal performance by 35% while reducing pressure drop by 20% compared to conventional designs.
-                        </p>
-                        <button onclick="openModal('modal1')" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
-                            Read More <i class="fas fa-arrow-right ml-2"></i>
-                        </button>
-                    </div>
+    <!-- Featured Research Section -->
+    <section class="mb-12">
+        <h2 class="text-2xl font-bold mb-6 text-blue-800 border-b pb-2">Featured Research</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Research 1 -->
+            <div class="research-card bg-white rounded-lg shadow overflow-hidden">
+                <div class="h-48 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Heat Exchanger" class="w-full h-full object-cover">
                 </div>
-
-                <!-- Research 2 -->
-                <div class="research-card bg-white rounded-lg shadow overflow-hidden">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1508514177221-188e1dfbcd19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Solar Thermal" class="w-full h-full object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2 text-blue-800">Advanced Microchannel Heat Exchangers</h3>
+                    <div class="flex items-center text-sm text-gray-500 mb-3">
+                        <span class="mr-4"><i class="far fa-calendar mr-1"></i> 2021</span>
+                        <span><i class="fas fa-book-open mr-1"></i> International Journal of Heat and Mass Transfer</span>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-blue-800">Hybrid Solar-Thermal Energy Storage System</h3>
-                        <div class="flex items-center text-sm text-gray-500 mb-3">
-                            <span class="mr-4"><i class="far fa-calendar mr-1"></i> 2022</span>
-                            <span><i class="fas fa-book-open mr-1"></i> Applied Energy</span>
-                        </div>
-                        <p class="text-gray-700 mb-4">
-                            Development of a hybrid system combining phase change materials with sensible heat storage to achieve 80% thermal efficiency and 24-hour heat supply capability for residential applications.
-                        </p>
-                        <button onclick="openModal('modal2')" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
-                            Read More <i class="fas fa-arrow-right ml-2"></i>
-                        </button>
-                    </div>
+                    <p class="text-gray-700 mb-4">
+                        This research presents a novel design for microchannel heat exchangers that improves thermal performance by 35% while reducing pressure drop by 20% compared to conventional designs.
+                    </p>
+                    <button onclick="openModal('modal1')" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                        Read More <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
                 </div>
             </div>
-        </section>
 
-        <!-- Publications Section -->
-        <section class="mb-12">
-            <div class="flex justify-between items-center mb-6">
-                <h2 class="text-2xl font-bold text-blue-800 border-b pb-2">Publications</h2>
-                <button onclick="openModal('publicationsModal')" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
-                    View All Publications <i class="fas fa-external-link-alt ml-2"></i>
+            <!-- Research 2 -->
+            <div class="research-card bg-white rounded-lg shadow overflow-hidden">
+                <div class="h-48 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1508514177221-188e1dfbcd19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Solar Thermal" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2 text-blue-800">Hybrid Solar-Thermal Energy Storage System</h3>
+                    <div class="flex items-center text-sm text-gray-500 mb-3">
+                        <span class="mr-4"><i class="far fa-calendar mr-1"></i> 2022</span>
+                        <span><i class="fas fa-book-open mr-1"></i> Applied Energy</span>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        Development of a hybrid system combining phase change materials with sensible heat storage to achieve 80% thermal efficiency and 24-hour heat supply capability for residential applications.
+                    </p>
+                    <button onclick="openModal('modal2')" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                        Read More <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section class="mb-12">
+        <div class="flex justify-between items-center mb-6">
+            <h2 class="text-2xl font-bold text-blue-800 border-b pb-2">Publications</h2>
+            <button onclick="openModal('publicationsModal')" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                View All Publications <i class="fas fa-external-link-alt ml-2"></i>
+            </button>
+        </div>
+        
+        <div class="bg-white rounded-lg shadow overflow-hidden">
+            <!-- Journal Papers -->
+            <div class="border-b">
+                <button onclick="toggleSection('journalPapers')" class="w-full text-left p-4 font-semibold text-blue-800 hover:bg-gray-50 flex justify-between items-center">
+                    <span><i class="fas fa-book mr-2"></i> Journal Papers</span>
+                    <i id="journalPapersIcon" class="fas fa-chevron-down"></i>
                 </button>
+                <div id="journalPapers" class="px-4 hidden">
+                    <div class="publication-item py-3 border-b">
+                        <div class="font-medium">Wilson, J., et al. (2023). "Enhanced Condensation Heat Transfer on Nanostructured Surfaces." <em>International Journal of Heat and Mass Transfer</em>, 180, 121756.</div>
+                    </div>
+                    <div class="publication-item py-3 border-b">
+                        <div class="font-medium">Wilson, J., et al. (2022). "Hybrid Solar-Thermal Energy Storage System." <em>Applied Energy</em>, 305, 117822.</div>
+                    </div>
+                    <div class="publication-item py-3 border-b">
+                        <div class="font-medium">Wilson, J., et al. (2021). "Advanced Microchannel Heat Exchangers." <em>International Journal of Heat and Mass Transfer</em>, 164, 120541.</div>
+                    </div>
+                    <div class="publication-item py-3">
+                        <div class="font-medium">Wilson, J., et al. (2020). "Numerical Analysis of Two-Phase Flow in Microchannels." <em>Journal of Heat Transfer</em>, 142(3), 032501.</div>
+                    </div>
+                </div>
             </div>
             
-            <div class="bg-white rounded-lg shadow overflow-hidden">
-                <!-- Journal Papers -->
-                <div class="border-b">
-                    <button onclick="toggleSection('journalPapers')" class="w-full text-left p-4 font-semibold text-blue-800 hover:bg-gray-50 flex justify-between items-center">
-                        <span><i class="fas fa-book mr-2"></i> Journal Papers</span>
-                        <i id="journalPapersIcon" class="fas fa-chevron-down"></i>
-                    </button>
-                    <div id="journalPapers" class="px-4 hidden">
-                        <div class="publication-item py-3 border-b">
-                            <div class="font-medium">Wilson, J., et al. (2023). "Enhanced Condensation Heat Transfer on Nanostructured Surfaces." <em>International Journal of Heat and Mass Transfer</em>, 180, 121756.</div>
-                        </div>
-                        <div class="publication-item py-3 border-b">
-                            <div class="font-medium">Wilson, J., et al. (2022). "Hybrid Solar-Thermal Energy Storage System." <em>Applied Energy</em>, 305, 117822.</div>
-                        </div>
-                        <div class="publication-item py-3 border-b">
-                            <div class="font-medium">Wilson, J., et al. (2021). "Advanced Microchannel Heat Exchangers." <em>International Journal of Heat and Mass Transfer</em>, 164, 120541.</div>
-                        </div>
-                        <div class="publication-item py-3">
-                            <div class="font-medium">Wilson, J., et al. (2020). "Numerical Analysis of Two-Phase Flow in Microchannels." <em>Journal of Heat Transfer</em>, 142(3), 032501.</div>
-                        </div>
+            <!-- Conference Papers -->
+            <div class="border-b">
+                <button onclick="toggleSection('conferencePapers')" class="w-full text-left p-4 font-semibold text-blue-800 hover:bg-gray-50 flex justify-between items-center">
+                    <span><i class="fas fa-users mr-2"></i> Conference Papers</span>
+                    <i id="conferencePapersIcon" class="fas fa-chevron-down"></i>
+                </button>
+                <div id="conferencePapers" class="px-4 hidden">
+                    <div class="publication-item py-3 border-b">
+                        <div class="font-medium">Wilson, J., et al. (2023). "Experimental Study of Nanofluid Heat Transfer in Microchannels." <em>ASME International Mechanical Engineering Congress & Exposition</em>, New Orleans, USA.</div>
                     </div>
-                </div>
-                
-                <!-- Conference Papers -->
-                <div class="border-b">
-                    <button onclick="toggleSection('conferencePapers')" class="w-full text-left p-4 font-semibold text-blue-800 hover:bg-gray-50 flex justify-between items-center">
-                        <span><i class="fas fa-users mr-2"></i> Conference Papers</span>
-                        <i id="conferencePapersIcon" class="fas fa-chevron-down"></i>
-                    </button>
-                    <div id="conferencePapers" class="px-4 hidden">
-                        <div class="publication-item py-3 border-b">
-                            <div class="font-medium">Wilson, J., et al. (2023). "Experimental Study of Nanofluid Heat Transfer in Microchannels." <em>ASME International Mechanical Engineering Congress & Exposition</em>, New Orleans, USA.</div>
-                        </div>
-                        <div class="publication-item py-3 border-b">
-                            <div class="font-medium">Wilson, J., et al. (2022). "Thermal Performance of Phase Change Materials for Building Applications." <em>International Conference on Thermal Engineering</em>, Dubai, UAE.</div>
-                        </div>
-                        <div class="publication-item py-3">
-                            <div class="font-medium">Wilson, J., et al. (2021). "CFD Analysis of Heat Exchanger Designs." <em>ASME Heat Transfer Summer Conference</em>, Virtual.</div>
-                        </div>
+                    <div class="publication-item py-3 border-b">
+                        <div class="font-medium">Wilson, J., et al. (2022). "Thermal Performance of Phase Change Materials for Building Applications." <em>International Conference on Thermal Engineering</em>, Dubai, UAE.</div>
                     </div>
-                </div>
-                
-                <!-- Patents -->
-                <div>
-                    <button onclick="toggleSection('patents')" class="w-full text-left p-4 font-semibold text-blue-800 hover:bg-gray-50 flex justify-between items-center">
-                        <span><i class="fas fa-certificate mr-2"></i> Patents</span>
-                        <i id="patentsIcon" class="fas fa-chevron-down"></i>
-                    </button>
-                    <div id="patents" class="px-4 hidden">
-                        <div class="publication-item py-3 border-b">
-                            <div class="font-medium">Wilson, J., et al. (2023). "Microchannel Heat Exchanger with Enhanced Flow Distribution." U.S. Patent No. 11,234,567.</div>
-                        </div>
-                        <div class="publication-item py-3 border-b">
-                            <div class="font-medium">Wilson, J., et al. (2022). "Hybrid Thermal Energy Storage System." U.S. Patent No. 10,987,654.</div>
-                        </div>
-                        <div class="publication-item py-3">
-                            <div class="font-medium">Wilson, J., et al. (2021). "Nanofluid Composition for Enhanced Heat Transfer." U.S. Patent No. 10,654,321.</div>
-                        </div>
+                    <div class="publication-item py-3">
+                        <div class="font-medium">Wilson, J., et al. (2021). "CFD Analysis of Heat Exchanger Designs." <em>ASME Heat Transfer Summer Conference</em>, Virtual.</div>
                     </div>
                 </div>
             </div>
-        </section>
+            
+            <!-- Patents -->
+            <div>
+                <button onclick="toggleSection('patents')" class="w-full text-left p-4 font-semibold text-blue-800 hover:bg-gray-50 flex justify-between items-center">
+                    <span><i class="fas fa-certificate mr-2"></i> Patents</span>
+                    <i id="patentsIcon" class="fas fa-chevron-down"></i>
+                </button>
+                <div id="patents" class="px-4 hidden">
+                    <div class="publication-item py-3 border-b">
+                        <div class="font-medium">Wilson, J., et al. (2023). "Microchannel Heat Exchanger with Enhanced Flow Distribution." U.S. Patent No. 11,234,567.</div>
+                    </div>
+                    <div class="publication-item py-3 border-b">
+                        <div class="font-medium">Wilson, J., et al. (2022). "Hybrid Thermal Energy Storage System." U.S. Patent No. 10,987,654.</div>
+                    </div>
+                    <div class="publication-item py-3">
+                        <div class="font-medium">Wilson, J., et al. (2021). "Nanofluid Composition for Enhanced Heat Transfer." U.S. Patent No. 10,654,321.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <!-- Education & Experience -->
-        <section class="mb-12">
-            <h2 class="text-2xl font-bold mb-6 text-blue-800 border-b pb-2">Education & Experience</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Education -->
-                <div class="bg-white p-6 rounded-lg shadow">
-                    <h3 class="text-xl font-bold mb-4 text-blue-800 flex items-center">
-                        <i class="fas fa-graduation-cap mr-2"></i> Education
-                    </h3>
-                    <div class="space-y-4">
-                        <div class="border-l-4 border-blue-500 pl-4">
-                            <div class="font-bold">Ph.D. in Mechanical Engineering</div>
-                            <div class="text-gray-600">Stanford University, 2015</div>
-                            <div class="text-sm text-gray-500">Thesis: "Advanced Thermal Management Systems for High-Power Electronics"</div>
-                        </div>
-                        <div class="border-l-4 border-blue-500 pl-4">
-                            <div class="font-bold">M.S. in Mechanical Engineering</div>
-                            <div class="text-gray-600">University of Michigan, 2011</div>
-                        </div>
-                        <div class="border-l-4 border-blue-500 pl-4">
-                            <div class="font-bold">B.S. in Mechanical Engineering</div>
-                            <div class="text-gray-600">Purdue University, 2009</div>
-                        </div>
+    <!-- Education & Experience -->
+    <section class="mb-12">
+        <h2 class="text-2xl font-bold mb-6 text-blue-800 border-b pb-2">Education & Experience</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Education -->
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h3 class="text-xl font-bold mb-4 text-blue-800 flex items-center">
+                    <i class="fas fa-graduation-cap mr-2"></i> Education
+                </h3>
+                <div class="space-y-4">
+                    <div class="border-l-4 border-blue-500 pl-4">
+                        <div class="font-bold">Ph.D. in Mechanical Engineering</div>
+                        <div class="text-gray-600">Stanford University, 2015</div>
+                        <div class="text-sm text-gray-500">Thesis: "Advanced Thermal Management Systems for High-Power Electronics"</div>
                     </div>
-                </div>
-                
-                <!-- Experience -->
-                <div class="bg-white p-6 rounded-lg shadow">
-                    <h3 class="text-xl font-bold mb-4 text-blue-800 flex items-center">
-                        <i class="fas fa-briefcase mr-2"></i> Experience
-                    </h3>
-                    <div class="space-y-4">
-                        <div class="border-l-4 border-blue-500 pl-4">
-                            <div class="font-bold">Senior Research Engineer</div>
-                            <div class="text-gray-600">Advanced Thermal Solutions Inc., 2018-Present</div>
-                            <div class="text-sm text-gray-500">Leading R&D projects on thermal management systems and heat exchanger design</div>
-                        </div>
-                        <div class="border-l-4 border-blue-500 pl-4">
-                            <div class="font-bold">Research Scientist</div>
-                            <div class="text-gray-600">National Renewable Energy Laboratory, 2015-2018</div>
-                            <div class="text-sm text-gray-500">Developed sustainable energy solutions and thermal storage systems</div>
-                        </div>
-                        <div class="border-l-4 border-blue-500 pl-4">
-                            <div class="font-bold">Mechanical Engineer</div>
-                            <div class="text-gray-600">General Electric, 2011-2013</div>
-                            <div class="text-sm text-gray-500">Thermal design and analysis for power generation systems</div>
-                        </div>
+                    <div class="border-l-4 border-blue-500 pl-4">
+                        <div class="font-bold">M.S. in Mechanical Engineering</div>
+                        <div class="text-gray-600">University of Michigan, 2011</div>
+                    </div>
+                    <div class="border-l-4 border-blue-500 pl-4">
+                        <div class="font-bold">B.S. in Mechanical Engineering</div>
+                        <div class="text-gray-600">Purdue University, 2009</div>
                     </div>
                 </div>
             </div>
-        </section>
+            
+            <!-- Experience -->
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h3 class="text-xl font-bold mb-4 text-blue-800 flex items-center">
+                    <i class="fas fa-briefcase mr-2"></i> Experience
+                </h3>
+                <div class="space-y-4">
+                    <div class="border-l-4 border-blue-500 pl-4">
+                        <div class="font-bold">Senior Research Engineer</div>
+                        <div class="text-gray-600">Advanced Thermal Solutions Inc., 2018-Present</div>
+                        <div class="text-sm text-gray-500">Leading R&D projects on thermal management systems and heat exchanger design</div>
+                    </div>
+                    <div class="border-l-4 border-blue-500 pl-4">
+                        <div class="font-bold">Research Scientist</div>
+                        <div class="text-gray-600">National Renewable Energy Laboratory, 2015-2018</div>
+                        <div class="text-sm text-gray-500">Developed sustainable energy solutions and thermal storage systems</div>
+                    </div>
+                    <div class="border-l-4 border-blue-500 pl-4">
+                        <div class="font-bold">Mechanical Engineer</div>
+                        <div class="text-gray-600">General Electric, 2011-2013</div>
+                        <div class="text-sm text-gray-500">Thermal design and analysis for power generation systems</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     </main>
 
     <!-- Footer -->
